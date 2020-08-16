@@ -264,9 +264,12 @@ static esp_err_t cmd_handler(httpd_req_t *req)
         Serial.println("TurnLeft");
         ledcWrite(3,0);
         ledcWrite(5,0); 
-        if      (actstate == fwd) { ledcWrite(4,speed); ledcWrite(6,    0); }
-        else if (actstate == rev) { ledcWrite(4,    0); ledcWrite(6,speed); }
-        else                      { ledcWrite(4,speed); ledcWrite(6,speed); }
+        //if      (actstate == fwd) { ledcWrite(4,speed); ledcWrite(6,    0); }
+        //else if (actstate == rev) { ledcWrite(4,    0); ledcWrite(6,speed); }
+        //else                      { ledcWrite(4,speed); ledcWrite(6,speed); }
+        ledcWrite(4,speed); 
+        ledcWrite(6,speed);
+              
         delay(100);  
         ledcWrite(4,0);
         ledcWrite(6,0);
@@ -283,9 +286,12 @@ static esp_err_t cmd_handler(httpd_req_t *req)
         Serial.println("TurnRight");
         ledcWrite(4,0);
         ledcWrite(6,0); 
-        if      (actstate == fwd) { ledcWrite(3,    0); ledcWrite(5,speed); }
-        else if (actstate == rev) { ledcWrite(3,speed); ledcWrite(5,    0); }
-        else                      { ledcWrite(3,speed); ledcWrite(5,speed); }
+        //if      (actstate == fwd) { ledcWrite(3,    0); ledcWrite(5,speed); }
+        //else if (actstate == rev) { ledcWrite(3,speed); ledcWrite(5,    0); }
+        //else                      { ledcWrite(3,speed); ledcWrite(5,speed); }
+        ledcWrite(3,speed); 
+        ledcWrite(5,speed);
+              
         delay(100);
 
         ledcWrite(3, 0);
