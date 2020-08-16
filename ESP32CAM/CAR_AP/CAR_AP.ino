@@ -119,9 +119,9 @@ void setup(){
 
   for (int i = 0; i < 5; i++) {
     ledcWrite(7, 10); // flash led
-    delay(200);
+    delay(50);
     ledcWrite(7, 0);
-    delay(200);
+    delay(50);
   }
 }
 
